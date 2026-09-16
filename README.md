@@ -1,0 +1,1 @@
+This repository consists of Object-Oriented Programming lessons and code blocks representing learnings that I got during studying
