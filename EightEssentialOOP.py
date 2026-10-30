@@ -26,3 +26,19 @@ class Dog(Animal):
 dog = Dog()
 print(dog.speak())
 print(dog.fetch())
+
+#Polymorphism : Different classes expose the same operation but implement it differently.
+
+class CardPayment:
+    def pay(self, amount):
+        return f"Card: {amount}"
+
+class UPIPayment:
+    def pay(self, amount):
+        return f"UPI: {amount}"
+
+def checkout(payment, amount):
+    return payment.pay(amount)
+
+print(checkout(CardPayment(), 500))
+print(checkout(UPIPayment(), 500))
