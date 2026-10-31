@@ -42,3 +42,16 @@ def checkout(payment, amount):
 
 print(checkout(CardPayment(), 500))
 print(checkout(UPIPayment(), 500))
+
+#Abstraction : Define what an object must do while hiding implementation details.
+
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+class Wallet(Payment):
+    def pay(self, amount):
+        return f"Paid {amount} from wallet"
