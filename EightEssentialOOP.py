@@ -55,3 +55,19 @@ class Payment(ABC):
 class Wallet(Payment):
     def pay(self, amount):
         return f"Paid {amount} from wallet"
+
+#Composition : One object contains or uses another object. This is a has-a relationship.
+
+class Engine:
+    def start(self):
+        return "Engine started"
+
+class Car:
+    def __init__(self):
+        self.engine = Engine()
+
+    def start(self):
+        return self.engine.start()
+
+car = Car()
+print(car.start())
